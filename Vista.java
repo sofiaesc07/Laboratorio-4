@@ -104,6 +104,10 @@ public class Vista {
         }
     }
 
+<<<<<<< HEAD
+=======
+    // tendrias que hacer uno para los otros dos modelos:
+>>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d
     public String obtener_respuesta_modo_telefono_modeloS(){
 
         System.out.println("========== Modo Telefono ==========");
@@ -121,6 +125,7 @@ public class Vista {
             else{
                 System.out.println("\nRespuesta no reconocida, intenta de nuevo..\n");
             }
+<<<<<<< HEAD
         }
     }
 
@@ -164,6 +169,15 @@ public class Vista {
         }
     }
 
+=======
+
+        }
+
+    }
+
+
+    // tendrias que hacer uno por cada modelo:
+>>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d
     public String obtener_respuesta_modo_productividad_modeloS(){
         System.out.println("========== Modo Productividad ==========");
         System.out.println("[ 1 ] Planificar viajes");
@@ -177,6 +191,7 @@ public class Vista {
             else{
                 System.out.println("\nRespuesta no reconocida, intenta de nuevo..\n");
             }
+<<<<<<< HEAD
         }
     }
 
@@ -212,3 +227,11 @@ public class Vista {
         }
     }
 }
+=======
+
+        }
+    }
+    
+
+}
+>>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d

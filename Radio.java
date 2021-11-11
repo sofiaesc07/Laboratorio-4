@@ -75,7 +75,11 @@ interface IClaseA{
     void llamar_ultimo_contacto();
     void ver_tarjetas_presentacion();
 }
+<<<<<<< HEAD
 // Interfaces que solamente tienen los carros Clase C:
+=======
+// Interfaces que solamente tienen los carros Clase A:
+>>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d
 interface IClaseC{
     void cambiar_llamada_espera();
     void ver_pronostico_tiempo();
@@ -199,6 +203,24 @@ class RadioCarroClaseS extends Radio implements InterfazModoRadio, InterfazModoR
     }
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d
 class RadioCarroClaseA extends Radio implements InterfazModoRadio, InterfazModoReproduccion, InterfazModoTelefono, IClaseA{
 
     protected String ultimo_contaco = "";
@@ -311,6 +333,13 @@ class RadioCarroClaseA extends Radio implements InterfazModoRadio, InterfazModoR
 }
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d
 class RadioCarroClaseC extends Radio implements InterfazModoRadio , InterfazModoReproduccion, InterfazModoTelefono, IClaseC{
 
     protected Boolean llamada_en_espera = false;
@@ -428,4 +457,13 @@ class RadioCarroClaseC extends Radio implements InterfazModoRadio , InterfazModo
     public void ver_pronostico_tiempo() {
         System.out.println("Viendo pronostico de tiempo..");
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+
+
+>>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d
