@@ -137,10 +137,6 @@ class Driver{
 
     }
 
-
-
-
-
     public static void crear_carro_tipo_A(){
 
         RadioCarroClaseA radioA = new RadioCarroClaseA();
@@ -151,5 +147,4 @@ class Driver{
         RadioCarroClaseC radioC = new RadioCarroClaseC();
         
     }
-
 }
