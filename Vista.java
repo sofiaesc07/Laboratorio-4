@@ -1,3 +1,15 @@
+/***************************************************************************
+Vista.java
+
+Autores: 
+Pedro Camposeco - 21360
+Ana Escobar - 20489
+Evelyn López - 21126
+
+Con esta clase podremos acceder a los métodos de la clase arrays para 
+ejecutar las funcionalidades del programa.
+****************************************************************************/
+
 import java.util.Scanner;
 
 public class Vista {
@@ -43,19 +55,20 @@ public class Vista {
 
     }
 
-    public String obtener_respuesta_modelo_s(){
+    public String obtener_respuesta_modelo_sac(){
 
-        System.out.println("========== Radio Modelo S ==========");
+        System.out.println("========== Radio  ==========");
         System.out.println("[ 1 ] Modo Radio");
         System.out.println("[ 2 ] Modo Reproduccion");
         System.out.println("[ 3 ] Modo Telefono");
         System.out.println("[ 4 ] Modo Productividad");
+        System.out.println("[ 5 ] Apagar la radio");
 
         String respuesta = "";
         while(true){
             System.out.print("Opcion No: ");
             respuesta = sc.nextLine();
-            if(respuesta.equals("1") || respuesta.equals("2") || respuesta.equals("3") || respuesta.equals("4")){
+            if(respuesta.equals("1") || respuesta.equals("2") || respuesta.equals("3") || respuesta.equals("4" ) || respuesta.equals("5")){
                 return respuesta;
             }
             else{
@@ -104,10 +117,6 @@ public class Vista {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // tendrias que hacer uno para los otros dos modelos:
->>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d
     public String obtener_respuesta_modo_telefono_modeloS(){
 
         System.out.println("========== Modo Telefono ==========");
@@ -125,7 +134,6 @@ public class Vista {
             else{
                 System.out.println("\nRespuesta no reconocida, intenta de nuevo..\n");
             }
-<<<<<<< HEAD
         }
     }
 
@@ -169,15 +177,6 @@ public class Vista {
         }
     }
 
-=======
-
-        }
-
-    }
-
-
-    // tendrias que hacer uno por cada modelo:
->>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d
     public String obtener_respuesta_modo_productividad_modeloS(){
         System.out.println("========== Modo Productividad ==========");
         System.out.println("[ 1 ] Planificar viajes");
@@ -191,7 +190,6 @@ public class Vista {
             else{
                 System.out.println("\nRespuesta no reconocida, intenta de nuevo..\n");
             }
-<<<<<<< HEAD
         }
     }
 
@@ -227,11 +225,3 @@ public class Vista {
         }
     }
 }
-=======
-
-        }
-    }
-    
-
-}
->>>>>>> f5a7958fdea7c031583c10f8f1197d7617a2437d

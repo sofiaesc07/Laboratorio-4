@@ -1,3 +1,15 @@
+/***************************************************************************
+Cancion.java
+
+Autores: 
+Pedro Camposeco - 21360
+Ana Escobar - 20489
+Evelyn López - 21126
+
+Clase creada con el proposito de guardar las canciones y los contactos
+dentro de la radio. 
+****************************************************************************/
+
 public class Cancion {
     
     private String nombre_cancion;
