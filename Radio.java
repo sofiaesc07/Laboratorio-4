@@ -143,22 +143,26 @@ intefareces via polimorfismo.
  
  class RadioCarroClaseS extends Radio implements InterfazModoRadio, InterfazModoReproduccion, InterfazModoTelefono, IClaseS{
  
-     protected String bocinas_auriculares = "bocinas";
- 
+     protected String bocinas_auriculares = "bocinas"; //Propiedad para cambiar el tipo de bocina con la que se escucha el audio.
+     
+
+     //-----------------------------------------------------------------------------------
      // Metodos para InterfazModoRadio
      @Override
-     public void CambiarFMAM() {
+     public void CambiarFMAM() {//Metodo para cambiar la frecuencia del radio.
+
          if(this.modo_actual.equals("AM")){this.modo_actual = "FM";}
          else{this.modo_actual = "AM";}
          System.out.println("Se ha cambiado al modo " + this.modo_actual);
      }
      @Override
-     public void CambiarEmisora() {
+     public void CambiarEmisora() {//Metodo para cambiar la emisora del radio.
          this.emisora_actual += 0.5f;
          System.out.println("Se ha cambiado a la emisora " + this.emisora_actual);
      }
      @Override
-     public void GuardarEmisora() {
+     public void GuardarEmisora() { //Método que guarda las emisoras y que indica cuando ya no hay espacio para guardar más.
+
          if(this.emisoras_guardadas.size() > 50){
              System.out.println("\nLimite de emisoras sobrepasado!\n");
          }
@@ -166,19 +170,20 @@ intefareces via polimorfismo.
          System.out.println("Se ha guardado la emisora actual " + this.emisora_actual);}
      }
      @Override
-     public void CargarAEmisora() {
+     public void CargarAEmisora() { //Método para mostrar que emisora se está reproduciendo.
+
          System.err.println("Cargando emisora actual [" + this.modo_actual + "] " + this.emisora_actual);
      }
  
      // Metodos para InterfazModoReproduccion
      @Override
-     public void SeleccionarListaReproduccion() {      
+     public void SeleccionarListaReproduccion() {  //Método que reproduce un playlist de manera aleatoria.     
            int eleccion = rnd.nextInt(lista_reproduccion.length);
            System.out.println("Actualmente reproduciendo aleatoriamente la Playlist: "+lista_reproduccion[eleccion]);
          
      }
      @Override
-     public void CambiarCancionEnReproduccion() {
+     public void CambiarCancionEnReproduccion() { //Metodo para cambiar la las canciones dentro de una lista de reproducción.
          if(posicion_cancion_actual < lista_canciones.size()){
              // Todavia no se ha llegado al numero maximo que se puede acceder:
              System.out.println("Se ha cambiado de cancion a: " + lista_canciones.get(posicion_cancion_actual).getNombre_cancion());
@@ -190,7 +195,7 @@ intefareces via polimorfismo.
          }
      }
      @Override
-     public void EscucharCancion() {
+     public void EscucharCancion() {//Método que permite al usuario escuchar una canción de su elección.
          System.out.println("==== Escuchando Cancion ====");
          System.out.println("Nombre   : " + lista_canciones.get(posicion_cancion_actual).getNombre_cancion());
          System.out.println("Duracion : " + lista_canciones.get(posicion_cancion_actual).getDuracion_cancion());
@@ -198,7 +203,7 @@ intefareces via polimorfismo.
          System.out.println("Genero   : " + lista_canciones.get(posicion_cancion_actual).getGenero_cancion());
      }
      @Override
-     public void ConectarDesconectarTelefono() {
+     public void ConectarDesconectarTelefono() { //Metodo para conectar el teléfono al radio. 
          this.telefono_conectado = (telefono_conectado) ? false : true;
          if(telefono_conectado){
              System.out.println("El telefono se encuetra conectado.");
@@ -207,7 +212,7 @@ intefareces via polimorfismo.
  
      }
      @Override
-     public void MostrarContactos() {
+     public void MostrarContactos() { //Metodo que arroja una lista en donde estan los contactos previamente guardados
          System.out.println("== Imprimiendo Contactos ===");
          System.out.println("Conectando telefono para imprimir contactos...");
          telefono_conectado = true;
@@ -236,7 +241,7 @@ intefareces via polimorfismo.
          }
      }
      @Override
-     public void Finalizar_llamada() {
+     public void Finalizar_llamada() { //Metodo que avisa al usuario si se encuentra en una llamada y la finaliza.
          // Revisamos si esta en llamada, si no, se le avisa que no se puede finalizar:
          if(llamada_en_progreso){
              llamada_en_progreso = false;
@@ -248,13 +253,13 @@ intefareces via polimorfismo.
          
      }
      @Override
-     public void cambiar_bocinas_auriculares() {
+     public void cambiar_bocinas_auriculares() { //Metodo para cambiar la bocina del radio a auriculares.
          this.bocinas_auriculares = (bocinas_auriculares.equals("bocinas")) ? "auriculares" : "bocinas";
          System.out.println("Se ha intercambiado a estar usando " + bocinas_auriculares + ".");
          
      }
      @Override
-     public void planificar_viajes() {
+     public void planificar_viajes() {  //Metodo que ayuda al usuario a planificar un viaje al destino que desee.
          String viaje = "";
          System.out.println("¿A donde desea viajar?");
          viaje = sc.nextLine();
@@ -291,37 +296,39 @@ intefareces via polimorfismo.
  
  class RadioCarroClaseA extends Radio implements InterfazModoRadio, InterfazModoReproduccion, InterfazModoTelefono, IClaseA{
  
-     protected String ultimo_contaco = "";
+     protected String ultimo_contaco = ""; //Propiedad para llamar al último contacto al que llamó el usuario.
  
      @Override
-     public void CambiarFMAM() {
+     public void CambiarFMAM() { //Metodo para cambiar la frecuencia del radio.
+
          if(this.modo_actual.equals("AM")){this.modo_actual = "FM";}
          else{this.modo_actual = "AM";}
      }
      @Override
-     public void CambiarEmisora() {
+     public void CambiarEmisora() { //Metodo para cambiar la emisora del radio.
+
          this.emisora_actual += 05f;
      }
      @Override
-     public void GuardarEmisora() {
+     public void GuardarEmisora() { //Metodo que guarda las emisoras y que indica cuando ya no hay espacio para guardar más.
          if(this.emisoras_guardadas.size() > 50){
              System.out.println("\nLimite de emisoras sobrepasado!\n");
          }
          else{this.emisoras_guardadas.add(this.emisora_actual);}
      }
      @Override
-     public void CargarAEmisora() {
+     public void CargarAEmisora() { //Método para mostrar que emisora se está reproduciendo.
          System.err.println("Cargando emisora actual [" + this.modo_actual + "] " + this.emisora_actual);
      }
  
      @Override
-     public void SeleccionarListaReproduccion() {      
+     public void SeleccionarListaReproduccion() {   //Método que reproduce un playlist de manera aleatoria.    
            int eleccion = rnd.nextInt(lista_reproduccion.length);
            System.out.println("Actualmente reproduciendo aleatoriamente la Playlist: "+lista_reproduccion[eleccion]);
          
      }
      @Override
-     public void CambiarCancionEnReproduccion() {
+     public void CambiarCancionEnReproduccion() { //Metodo para cambiar la las canciones dentro de una lista de reproducción.
          if(posicion_cancion_actual < lista_canciones.size()){
              // Todavia no se ha llegado al numero maximo que se puede acceder:
              System.out.println("Se ha cambiado de cancion a " + lista_canciones.get(posicion_cancion_actual).getNombre_cancion());
@@ -333,7 +340,7 @@ intefareces via polimorfismo.
          }
      }
      @Override
-     public void EscucharCancion() {
+     public void EscucharCancion() { //Método que permite al usuario escuchar una canción de su elección.
          System.out.println("==== Escuchando Cancion ====");
          System.out.println("Nombre   : " + lista_canciones.get(posicion_cancion_actual).getNombre_cancion());
          System.out.println("Duracion : " + lista_canciones.get(posicion_cancion_actual).getDuracion_cancion());
@@ -341,7 +348,7 @@ intefareces via polimorfismo.
          System.out.println("Genero   : " + lista_canciones.get(posicion_cancion_actual).getGenero_cancion());
      }
      @Override
-     public void ConectarDesconectarTelefono() {
+     public void ConectarDesconectarTelefono() { //Metodo para conectar el teléfono al radio. 
          this.telefono_conectado = (telefono_conectado) ? false : true;
          if(telefono_conectado){
              System.out.println("El telefono se encuetra conectado.");
@@ -349,7 +356,7 @@ intefareces via polimorfismo.
          else{System.out.println("El telefono se encuetra desconectado.");}
      }
      @Override
-     public void MostrarContactos() {
+     public void MostrarContactos() { //Metodo que arroja una lista en donde estan los contactos previamente guardados
          System.out.println("== Imprimiendo Contactos ===");
          for(Contacto c: lista_contactos){
              System.out.println("");
@@ -376,7 +383,7 @@ intefareces via polimorfismo.
          }
      }
      @Override
-     public void Finalizar_llamada() {
+     public void Finalizar_llamada() { //Metodo que avisa al usuario si se encuentra en una llamada y la finaliza. 
          // Revisamos si esta en llamada, si no, se le avisa que no se puede finalizar:
          if(llamada_en_progreso){
              llamada_en_progreso = false;
@@ -389,13 +396,13 @@ intefareces via polimorfismo.
          
      }
      @Override
-     public void llamar_ultimo_contacto() {
+     public void llamar_ultimo_contacto() {  //Metodo para hacer una llamada al último contacto con el que se comunicó el usuario. 
          System.out.println("\nLlamando a tu ultimo contacto: " + ultimo_contaco + "\n");
          llamada_en_progreso = true;
          Si_llamada_en_progreso_contacto = ultimo_contaco;  
      }
      @Override
-     public void ver_tarjetas_presentacion() {
+     public void ver_tarjetas_presentacion() { //Método que muestra al usuario una tarjeta de presentación.
          System.out.println("Viendo tarjetas de presentacion.");
      }
  }
@@ -428,37 +435,37 @@ intefareces via polimorfismo.
  
  class RadioCarroClaseC extends Radio implements InterfazModoRadio , InterfazModoReproduccion, InterfazModoTelefono, IClaseC{
  
-     protected Boolean llamada_en_espera = false;
+     protected Boolean llamada_en_espera = false; //Propiedad para dejar en espera a la llamada actual.
  
      @Override
-     public void CambiarFMAM() {
+     public void CambiarFMAM() { //Metodo para cambiar la frecuencia del radio.
          if(this.modo_actual.equals("AM")){this.modo_actual = "FM";}
          else{this.modo_actual = "AM";}
      }
      @Override
-     public void CambiarEmisora() {
+     public void CambiarEmisora() { //Metodo para cambiar la emisora del radio.
          this.emisora_actual += 05f;
      }
      @Override
-     public void GuardarEmisora() {
+     public void GuardarEmisora() { //Metodo que guarda las emisoras y que indica cuando ya no hay espacio para guardar más.
          if(this.emisoras_guardadas.size() > 50){
              System.out.println("\nLimite de emisoras sobrepasado!\n");
          }
          else{this.emisoras_guardadas.add(this.emisora_actual);}
      }
      @Override
-     public void CargarAEmisora() {
+     public void CargarAEmisora() { //Método para mostrar que emisora se está reproduciendo.
          System.err.println("Cargando emisora actual [" + this.modo_actual + "] " + this.emisora_actual);
      }
  
      @Override
-     public void SeleccionarListaReproduccion() {      
+     public void SeleccionarListaReproduccion() {     //Método que reproduce un playlist de manera aleatoria. 
            int eleccion = rnd.nextInt(lista_reproduccion.length);
            System.out.println("Actualmente reproduciendo aleatoriamente la Playlist: "+lista_reproduccion[eleccion]);
          
      }
      @Override
-     public void CambiarCancionEnReproduccion() {
+     public void CambiarCancionEnReproduccion() {//Metodo para cambiar la las canciones dentro de una lista de reproducción.
          if(posicion_cancion_actual < lista_canciones.size()){
              // Todavia no se ha llegado al numero maximo que se puede acceder:
              System.out.println("Se ha cambiado de cancion a " + lista_canciones.get(posicion_cancion_actual).getNombre_cancion());
@@ -470,7 +477,7 @@ intefareces via polimorfismo.
          }
      }
      @Override
-     public void EscucharCancion() {
+     public void EscucharCancion() { //Método que permite al usuario escuchar una canción de su elección.
          System.out.println("==== Escuchando Cancion ====");
          System.out.println("Nombre   : " + lista_canciones.get(posicion_cancion_actual).getNombre_cancion());
          System.out.println("Duracion : " + lista_canciones.get(posicion_cancion_actual).getDuracion_cancion());
@@ -478,7 +485,7 @@ intefareces via polimorfismo.
          System.out.println("Genero   : " + lista_canciones.get(posicion_cancion_actual).getGenero_cancion());
      }
      @Override
-     public void ConectarDesconectarTelefono() {
+     public void ConectarDesconectarTelefono() {//Metodo para conectar el teléfono al radio. 
          this.telefono_conectado = (telefono_conectado) ? false : true;
          if(telefono_conectado){
              System.out.println("El telefono se encuetra conectado.");
@@ -486,7 +493,7 @@ intefareces via polimorfismo.
          else{System.out.println("El telefono se encuetra desconectado.");}
      }
      @Override
-     public void MostrarContactos() {
+     public void MostrarContactos() {//Metodo que arroja una lista en donde estan los contactos previamente guardados
          System.out.println("== Imprimiendo Contactos ===");
          for(Contacto c: lista_contactos){
              System.out.println("");
@@ -513,7 +520,7 @@ intefareces via polimorfismo.
          }
      }
      @Override
-     public void Finalizar_llamada() {
+     public void Finalizar_llamada() {//Metodo que avisa al usuario si se encuentra en una llamada y la finaliza. 
          // Revisamos si esta en llamada, si no, se le avisa que no se puede finalizar:
          if(llamada_en_progreso){
              llamada_en_progreso = false;
@@ -525,7 +532,7 @@ intefareces via polimorfismo.
          
      }
      @Override
-     public void cambiar_llamada_espera() {
+     public void cambiar_llamada_espera() { //Metodo que dejará en espera al contacto con el que se esté comunicando el usuario. 
          if(llamada_en_progreso && llamada_en_espera == false){
              System.out.println("Poniendo llamada en espera con: " + Si_llamada_en_progreso_contacto);
              llamada_en_espera = true;
@@ -540,7 +547,7 @@ intefareces via polimorfismo.
          
      }
      @Override
-     public void ver_pronostico_tiempo() {
+     public void ver_pronostico_tiempo() { //Método que muestra al usuario el pronóstico del tiempo. 
          System.out.println("Viendo pronostico de tiempo..");
      }
  }
