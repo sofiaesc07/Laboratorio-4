@@ -4,7 +4,9 @@
  * 
  *
  * Descripción: Con esta clase podremos acceder a los métodos de la clase arrays para 
-* ejecutar las funcionalidades del programa.Clase que muestra mensajes
+
+
+ * ejecutar las funcionalidades del programa.Clase que muestra mensajes
  * 
  * <p>
  * Programación Orientada a Objetos - Universidad del Valle de Guatemala
@@ -103,13 +105,12 @@
              respuesta = sc.nextLine();
              if(respuesta.equals("1") || respuesta.equals("2") || respuesta.equals("3") || respuesta.equals("4")){
                  return respuesta;
-             }
-             else{
-                 System.out.println("\nRespuesta no reconocida, intenta de nuevo..\n");
-             }
- 
-         }
-     }
+            }
+            else{
+                System.out.println("\nRespuesta no reconocida, intenta de nuevo..\n");
+            }
+        }
+    }
  
      public String obtener_respuesta_modo_reproduccion(){
          //Metodo que tiene las opciones de modo reproducción como seleccionar una playlistm cambiar de canción, etc.

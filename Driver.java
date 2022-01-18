@@ -70,7 +70,7 @@ class Driver{
                     radioS.CambiarFMAM();
     
                     break;
-    
+                
                     case "2":
                     //Para cambiar emisora, se cambia en intervalos de 0.5
                     radioS.CambiarEmisora();
@@ -158,6 +158,10 @@ class Driver{
                 if(vs.obtener_respuesta_modo_productividad_modeloS().equals("1")){
                     radioS.planificar_viajes();
                 }
+                break;
+
+                case "5":
+
                 break;
             }
         }
@@ -272,6 +276,10 @@ class Driver{
                     radioA.ver_tarjetas_presentacion();
                 }
                 break;
+
+                case "5":
+
+                break;
     
             }
         }        
@@ -314,6 +322,10 @@ class Driver{
     
                     radioC.CargarAEmisora();
     
+                    break;
+
+                    case "5":
+
                     break;
                 }
     
@@ -382,6 +394,10 @@ class Driver{
                 if(vs.obtener_respuesta_modo_productividad_modeloC().equals("1")){
                     radioC.ver_pronostico_tiempo();
                 }
+                break;
+
+                case "5":
+
                 break;
                 
             }
